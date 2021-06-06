@@ -51,6 +51,7 @@ function findByArtist(artist) {
   for (let i = 0; i < collection.length; i++) {
     if (collection[i].artist === artist) {
       results.push(collection[i]);
+      console.log(`Yes, ${artist} is in the collection.`); //how come this logs out before the log from the test log logs out? if that makes sense lol I get "Yes, _____ is in the collection" then "Is _____ in my collection?" Just wondering if we can have whats in the function log out after the test log.
     }
   }
   return results;
