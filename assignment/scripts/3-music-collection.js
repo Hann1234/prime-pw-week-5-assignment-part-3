@@ -29,7 +29,33 @@ function showCollection(array) {
     console.log('ARTIST:', object.artist);
     console.log('YEAR:', object.yearPublished);
   }
-  return 'This is my collection.';
+  return 'This is my collection.'; //I added this return because if I dont I get "undefined" when I log it out in console. Is there a better way to avoid getting undefined?
 }
 
 console.log('Test - showCollection:', showCollection(collection));
+
+/* function findByArtist(artist) {
+  let results = [];
+  for (let object of collection) {
+    if (object.artist === artist) {
+      results.push(object);
+    }
+      return results;
+  }
+}
+This only added one object to the array... how can i use a for of loop to solve this?
+*/
+
+function findByArtist(artist) {
+  let results = [];
+  for (let i = 0; i < collection.length; i++) {
+    if (collection[i].artist === artist) {
+      results.push(collection[i]);
+    }
+  }
+  return results;
+}
+
+console.log('Is RHCP in my collection?', findByArtist('RHCP'));
+console.log('Is Tool in my collection?', findByArtist('Tool'));
+console.log('Is Father John Misty in my collection?', findByArtist('Father John Misty'));
